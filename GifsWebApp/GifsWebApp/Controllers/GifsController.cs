@@ -23,9 +23,20 @@ namespace GifsWebApp.Controllers
         // GET: Gifs
         public async Task<IActionResult> Index()
         {
-              return _context.Gif != null ? 
-                          View(await _context.Gif.ToListAsync()) :
-                          Problem("Entity set 'GifsWebAppContext.Gif'  is null.");
+              return _context.Gif != null ? View(await _context.Gif.ToListAsync()) : Problem("Entity set 'GifsWebAppContext.Gif'  is null.");
+        }
+
+        // GET: ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+              return View();
+        }
+        // Post: Gifs/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(string searchPhrase)
+        {
+            return _context.Gif != null ?
+                        View("Index",await _context.Gif.Where(j => j.GifName.Contains(searchPhrase)).ToListAsync()) :
+                        Problem("Entity set 'GifsWebAppContext.Gif'  is null.");
         }
 
         // GET: Gifs/Details/5
