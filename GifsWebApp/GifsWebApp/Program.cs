@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using GifsWebApp.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<GifsWebAppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GifsWebAppContext") ?? throw new InvalidOperationException("Connection string 'GifsWebAppContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
