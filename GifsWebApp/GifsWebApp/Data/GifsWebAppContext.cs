@@ -1,19 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using GifsWebApp.Models;
 
 namespace GifsWebApp.Data
 {
     public class GifsWebAppContext : DbContext
     {
-        public GifsWebAppContext (DbContextOptions<GifsWebAppContext> options)
+        public GifsWebAppContext(DbContextOptions<GifsWebAppContext> options)
             : base(options)
         {
         }
 
-        public DbSet<GifsWebApp.Models.Gif> Gif { get; set; } = default!;
+        public DbSet<Gif> Gif { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Gif>()
+                .Property(g => g.Id)
+                .ValueGeneratedOnAdd(); // Ensure Id is auto-generated
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

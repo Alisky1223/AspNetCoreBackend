@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GifsWebApp.Data;
 using GifsWebApp.Models;
+using System.Diagnostics;
 
 namespace GifsWebApp.Controllers
 {
@@ -52,15 +53,21 @@ namespace GifsWebApp.Controllers
         }
 
         // POST: Gifs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,GifName,GifDiscription")] Gif gif)
+        public async Task<IActionResult> Create([Bind("GifName,GifDiscription")] Gif gif) // Removed Id from Bind
         {
             if (ModelState.IsValid)
             {
-                _context.Add(gif);
+                var gifId = await _context.Gif.CountAsync();
+                gifId += 1;
+                var mygif = new Gif
+                {
+                    Id = gifId,
+                    GifName = gif.GifName,
+                    GifDiscription = gif.GifDiscription
+                };
+                _context.Add(mygif);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
