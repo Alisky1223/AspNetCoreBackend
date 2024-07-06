@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebSite", "MyWebSite\MyWebSite.csproj", "{432A3BF0-20B5-478C-89CC-0BF22A565C88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GifsWebApp", "GifsWebApp\GifsWebApp.csproj", "{BFBA269D-A309-45E6-9350-E02EC06A0D5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{432A3BF0-20B5-478C-89CC-0BF22A565C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{432A3BF0-20B5-478C-89CC-0BF22A565C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{432A3BF0-20B5-478C-89CC-0BF22A565C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{432A3BF0-20B5-478C-89CC-0BF22A565C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBA269D-A309-45E6-9350-E02EC06A0D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBA269D-A309-45E6-9350-E02EC06A0D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBA269D-A309-45E6-9350-E02EC06A0D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBA269D-A309-45E6-9350-E02EC06A0D5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {58AE8BEF-796D-4297-98EB-86F5B76D3362}
+		SolutionGuid = {6DBF1EAC-F9C4-4C66-8F3F-E7082EAA766A}
 	EndGlobalSection
 EndGlobal
