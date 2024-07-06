@@ -28,7 +28,7 @@ namespace GifsWebApp.Controllers
 
         // GET: ShowSearchForm
         public async Task<IActionResult> ShowSearchForm()
-        {
+        {https://www.linkedin.com/feed/
               return View();
         }
         // Post: Gifs/ShowSearchResults
