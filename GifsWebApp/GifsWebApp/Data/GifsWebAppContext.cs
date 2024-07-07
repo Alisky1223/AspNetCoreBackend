@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GifsWebApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GifsWebApp.Data
 {

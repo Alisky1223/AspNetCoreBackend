@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using GifsWebApp.Data;
 using GifsWebApp.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GifsWebApp.Controllers
 {
@@ -40,6 +41,7 @@ namespace GifsWebApp.Controllers
         }
 
         // GET: Gifs/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Gif == null)
